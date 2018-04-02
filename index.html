@@ -183,12 +183,48 @@ Someone from the team will set you up.</p>
 </tr>
 </tbody>
 </table>
+<table>
+<thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+<th>Action Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>103</td>
+<td>Wallet Balance Ceiling Breach</td>
+<td>No action required, but you will be able to proceed with transaction.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Invalid/Non-Existent Wallet</td>
+<td>No action required, Mobile number is not registered to receive transaction.</td>
+</tr>
+<tr>
+<td>419</td>
+<td>Sanctions/OFAC list breach</td>
+<td>No action required, Receipient is not allowed to receive funds.</td>
+</tr>
+<tr>
+<td>402</td>
+<td>Client (MoneyGram) payment required</td>
+<td>Low funds, speak to Zeepay.</td>
+</tr>
+<tr>
+<td>200</td>
+<td>Validated Successfully</td>
+<td>Wallet exist, you can proceed with transaction.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="methods">Methods</h2>
 <h3 id="auth">Auth</h3>
 <p>OAuth access tokens also permit client-side API requests. All request sent must contain the access_token.
 Below is a guide on how to get the access token.</p>
 <p>Endpoint: <a href="https://test.shop.digitaltermination.com/oauth/token">test.digitaltermination.com/oauth/token</a></p>
-<pre><code class="curl"># Curl
+<pre><code class="curl"># CURL
 curl -X POST \
   http://test.digital.test/oauth/token \
   -H 'Cache-Control: no-cache' \
@@ -203,10 +239,64 @@ curl -X POST \
 </code></pre>
 
 <h3 id="validate-mobile-wallet">Validate Mobile Wallet</h3>
+<p>This method is used to verify is a mobile number is registered to accept Mobile Money.</p>
+<p>METHOD: POST</p>
+<table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>service_type</td>
+<td>String</td>
+<td>Required</td>
+<td>(Bank,Wallet)</td>
+</tr>
+<tr>
+<td>routing_number</td>
+<td>String</td>
+<td>Optional (Mandatory on Bank)</td>
+<td>Bank Routing Number</td>
+</tr>
+<tr>
+<td>account_number</td>
+<td>String</td>
+<td>Optional (Mandatory on Bank)</td>
+<td>Bank Account Number</td>
+</tr>
+<tr>
+<td>mobile_number</td>
+<td>Integer</td>
+<td>Optional (Mandatory on Wallet)</td>
+<td>Mobile Phone Number</td>
+</tr>
+<tr>
+<td>mno</td>
+<td>String</td>
+<td>Optional (Mandatory on Wallet)</td>
+<td>Mobile Network Operator</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="curl"># CURL
+curl -X POST \
+  https://test.digitaltermination.com/api/payout/validate \
+  -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHBzOi8vc2hvcC5kaWdpdGFsdGVybWluYXRpb24uY29tL2FwaS9hdXRoIiwiaWF0IjoxNTA2ODgzNjI3LCJleHAiOjE1MDY4ODcyMjcsIm5iZiI6MTUwNjg4MzYyNywianRpIjoiMEpOSTdXb1N0SmRKeFVnUiJ9.gdE-MRx_pgLxTaVm7KaAuM4jTB47ptfrpxEaAcmYZkk' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Postman-Token: 0efcac48-5df3-43fb-8ece-72f249f1a2c9' \
+  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+  -F service_type=Wallet \
+  -F mobile_number=233270369883 \
+  -F mno=Tigo
+</code></pre>
+
 <h3 id="payout">Payout</h3>
-<ul>
-<li>METHOD: POST</li>
-</ul>
+<p>METHOD: POST</p>
 <table>
 <thead>
 <tr>
@@ -369,5 +459,5 @@ curl -X POST \
 
 <!--
 MkDocs version : 0.17.1
-Build Date UTC : 2018-04-02 01:38:29
+Build Date UTC : 2018-04-02 02:21:36
 -->
