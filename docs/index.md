@@ -7,10 +7,7 @@ Digital Termination API allows you to send and receive funds accross africa thro
 * Receive SMS for free using SMS-enabled local numbers in countries around the world.
 * Only pay for what you use, nothing more.
 
-
 # Requirements
-* PHP 5.5.0
-* To use the PHP stream handler, allow_url_fopen must be enabled in your system's php.ini.
 * To use the cURL handler, you must have a recent version of cURL >= 7.19.4 compiled with OpenSSL and zlib.
 
 # Client Libraries
@@ -43,6 +40,13 @@ Error Code | Meaning
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
 
+Error Code  | Meaning | Action Required
+----------- | --------- | -------------
+103 | Wallet Balance Ceiling Breach | No action required, but you will be able to proceed with transaction.
+403 | Invalid/Non-Existent Wallet | No action required, Mobile number is not registered to receive transaction.
+419 | Sanctions/OFAC list breach | No action required, Receipient is not allowed to receive funds.
+402 | Client (MoneyGram) payment required | Low funds, speak to Zeepay.
+200 | Validated Successfully | Wallet exist, you can proceed with transaction.
 
 ## Methods
 
@@ -52,7 +56,7 @@ Below is a guide on how to get the access token.
 
 Endpoint: [test.digitaltermination.com/oauth/token](https://test.shop.digitaltermination.com/oauth/token)
 ```curl
-# Curl
+# CURL
 curl -X POST \
   http://test.digital.test/oauth/token \
   -H 'Cache-Control: no-cache' \
@@ -66,11 +70,33 @@ curl -X POST \
   -F password=your password
 ```
 ### Validate Mobile Wallet
+This method is used to verify is a mobile number is registered to accept Mobile Money.
 
+METHOD: POST
+
+Params | Data Type | Options | Description
+---------- | ------- | -------- | ----------
+service_type | String | Required | (Bank,Wallet)
+routing_number | String | Optional (Mandatory on Bank)| Bank Routing Number
+account_number | String | Optional (Mandatory on Bank)| Bank Account Number
+mobile_number | Integer | Optional (Mandatory on Wallet)| Mobile Phone Number
+mno | String | Optional (Mandatory on Wallet)| Mobile Network Operator
+
+```curl
+# CURL
+curl -X POST \
+  https://test.digitaltermination.com/api/payout/validate \
+  -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHBzOi8vc2hvcC5kaWdpdGFsdGVybWluYXRpb24uY29tL2FwaS9hdXRoIiwiaWF0IjoxNTA2ODgzNjI3LCJleHAiOjE1MDY4ODcyMjcsIm5iZiI6MTUwNjg4MzYyNywianRpIjoiMEpOSTdXb1N0SmRKeFVnUiJ9.gdE-MRx_pgLxTaVm7KaAuM4jTB47ptfrpxEaAcmYZkk' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Postman-Token: 0efcac48-5df3-43fb-8ece-72f249f1a2c9' \
+  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+  -F service_type=Wallet \
+  -F mobile_number=233270369883 \
+  -F mno=Tigo
+```
 
 ### Payout
-
-* METHOD: POST
+METHOD: POST
 
 Params | Data Type | Options | Description
 ---------- | ------- | -------- | ----------
