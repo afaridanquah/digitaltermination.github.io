@@ -54,7 +54,7 @@ Error Code  | Meaning | Action Required
 OAuth access tokens also permit client-side API requests. All request sent must contain the access_token.
 Below is a guide on how to get the access token.
 
-Endpoint: [test.digitaltermination.com/oauth/token](https://test.shop.digitaltermination.com/oauth/token)
+Endpoint: [test.digitaltermination.com/oauth/token](https://test.digitaltermination.com/oauth/token)
 ```curl
 # CURL
 curl -X POST \
