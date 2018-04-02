@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="shortcut icon" href="./img/favicon.ico">
+  <title>Home - Digital Termination</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/highlight.css">
+  <link href="./css/highlight-fix.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Home";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/";
+  </script>
+  
+  <script src="./js/jquery-2.1.1.min.js"></script>
+  <script src="./js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> Digital Termination</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href=".">Home</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#overview">Overview</a></li>
+    
+
+    <li class="toctree-l2"><a href="#requirements">Requirements</a></li>
+    
+
+    <li class="toctree-l2"><a href="#client-libraries">Client Libraries</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#authentication">Authentication</a></li>
+        
+            <li><a class="toctree-l3" href="#errors">Errors</a></li>
+        
+            <li><a class="toctree-l3" href="#methods">Methods</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">Digital Termination</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="overview">Overview</h1>
+<p>Digital Termination API allows you to send and receive funds accross africa through simple RESTful APIs.</p>
+<ul>
+<li>Programmatically send and receive high volume of transactions anywhere in the world.</li>
+<li>Build apps that scale with the web technologies that you are already using.</li>
+<li>Send SMS with low latency and high delivery rates.</li>
+<li>Receive SMS for free using SMS-enabled local numbers in countries around the world.</li>
+<li>Only pay for what you use, nothing more.</li>
+</ul>
+<h1 id="requirements">Requirements</h1>
+<ul>
+<li>PHP 5.5.0</li>
+<li>To use the PHP stream handler, allow_url_fopen must be enabled in your system's php.ini.</li>
+<li>To use the cURL handler, you must have a recent version of cURL &gt;= 7.19.4 compiled with OpenSSL and zlib.</li>
+</ul>
+<h1 id="client-libraries">Client Libraries</h1>
+<p>We maintain a set of officially support client libraries which make integrating and using the Simplito APIs significantly easier.
+Code examples for any of these client libraries can be seen by selecting your language of choice from the top right of the window.</p>
+<h2 id="authentication">Authentication</h2>
+<p>All authentication is handled through OAuth2 authentication.</p>
+<p>To connect to our system kindly send an email to the team via <a href="./something@myzeepay.com">something@myzeepay.com</a>.
+Someone from the team will set you up.</p>
+<h2 id="errors">Errors</h2>
+<p>The API uses standard HTTP response codes to indicate success, failure and everything inbetween. The various codes we return are outlined on the right side.</p>
+<p>All errors should be returned in the form of JSON along with a message which explains the issue in plain english. When a validation error occurs return the name of the field which is invalid one by one, so if you forgot to include two fields, only the name of the first field will be returned.</p>
+<h3 id="http-status-codes">HTTP Status Codes</h3>
+<table>
+<thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The simplito requested is hidden for administrators only.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified simplito could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a simplito with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn't json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The simplito requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I'm a teapot.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You're requesting too many simplito Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We're temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="methods">Methods</h2>
+<h3 id="auth">Auth</h3>
+<p>OAuth access tokens also permit client-side API requests. All request sent must contain the access_token.
+Below is a guide on how to get the access token.</p>
+<p>Endpoint: <a href="https://test.shop.digitaltermination.com/oauth/token">test.digitaltermination.com/oauth/token</a></p>
+<pre><code class="curl"># Curl
+curl -X POST \
+  http://test.digital.test/oauth/token \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: 6773dea8-fb4c-4794-8427-432b769ecd76' \
+  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+  -F grant_type=password \
+  -F client_secret=your secret  \
+  -F client_id= your client id \
+  -F username=bee@gmail.com \
+  -F password=your password
+</code></pre>
+
+<h3 id="validate-mobile-wallet">Validate Mobile Wallet</h3>
+<h3 id="payout">Payout</h3>
+<ul>
+<li>METHOD: POST</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Data Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sender_first_name</td>
+<td>String</td>
+<td>Required</td>
+<td>First Name of Sender</td>
+</tr>
+<tr>
+<td>sender_last_name</td>
+<td>String</td>
+<td>Required</td>
+<td>Last Namae of Sender</td>
+</tr>
+<tr>
+<td>sender_country</td>
+<td>String</td>
+<td>Required</td>
+<td>Sender Country</td>
+</tr>
+<tr>
+<td>receiver_first_name</td>
+<td>String</td>
+<td>Required</td>
+<td>Receipient First Name</td>
+</tr>
+<tr>
+<td>receiver_last_name</td>
+<td>String</td>
+<td>Required</td>
+<td>Receipient First Name</td>
+</tr>
+<tr>
+<td>receiver_msisdn</td>
+<td>String</td>
+<td>Required</td>
+<td>Receipient Mobile Number Account</td>
+</tr>
+<tr>
+<td>receiver_country</td>
+<td>String</td>
+<td>Required</td>
+<td>Receipient Country</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>Decimal</td>
+<td>Required</td>
+<td>Amount To Pay</td>
+</tr>
+<tr>
+<td>address</td>
+<td>String</td>
+<td>Required</td>
+<td>Address of Receipient</td>
+</tr>
+<tr>
+<td>receiver_currency</td>
+<td>String</td>
+<td>Required</td>
+<td>Receipient Currency</td>
+</tr>
+<tr>
+<td>mno</td>
+<td>String</td>
+<td>Optional</td>
+<td>Mobile Number Operator (MTN,TIGO,AIRTEL,VODAFONE,ZEEPAY)</td>
+</tr>
+<tr>
+<td>transaction_type</td>
+<td>String</td>
+<td>Optional</td>
+<td>(CR (For Credit))</td>
+</tr>
+<tr>
+<td>extr_id</td>
+<td>String</td>
+<td>Required</td>
+<td>Your Unique Reference</td>
+</tr>
+<tr>
+<td>service_type</td>
+<td>String</td>
+<td>Required</td>
+<td>Wallet,Pickup</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Sample Codes</li>
+</ul>
+<p>Endpoint: <a href="https://test.shop.digitaltermination.com/api/payout">test.digitaltermination.com/api/payout</a></p>
+<pre><code class="curl"># CURL
+curl -X POST \
+  https://test.digitaltermination.com/api/payouts \
+  -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHBzOi8vc2hvcC5kaWdpdGFsdGVybWluYXRpb24uY29tL2FwaS9hdXRoIiwiaWF0IjoxNTIyNDQ1NzMwLCJleHAiOjE1MjI0NDkzMzAsIm5iZiI6MTUyMjQ0NTczMCwianRpIjoiSlZ3N0VxRmVnWlFhUm90MCJ9.WHfOIqmfdvJ01kn3Hl9oIsh974XGv40SpV-lAO4XtOM' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Postman-Token: 398e8abb-6d48-4389-a124-0a5a54818eed' \
+  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+  -F sender_first_name=Test \
+  -F sender_last_name=Name \
+  -F sender_country=UK \
+  -F receiver_first_name=Kofi \
+  -F receiver_msisdn=233541859113 \
+  -F receiver_country=GH \
+  -F amount=1.00 \
+  -F 'address=Box 2662' \
+  -F receiver_currency=GHS \
+  -F mno=MTN \
+  -F receiver_last_name=Stephen \
+  -F transaction_type=CR \
+  -F extr_id=11111111129994 \
+  -F service_type=Wallet
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="./js/theme.js"></script>
+      <script src="./search/require.js"></script>
+      <script src="./search/search.js"></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 0.17.1
+Build Date UTC : 2018-04-02 01:19:11
+-->

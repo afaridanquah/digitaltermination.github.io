@@ -1,0 +1,8 @@
+site_name: Digital Termination
+pages: 
+    - Home: index.md
+    # - Methods: about.md
+theme: readthedocs
+search: true
+extra_css:
+    - css/highlight-fix.css
