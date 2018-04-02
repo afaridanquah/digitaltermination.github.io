@@ -14,7 +14,7 @@ Digital Termination API allows you to send and receive funds accross africa thro
 * To use the cURL handler, you must have a recent version of cURL >= 7.19.4 compiled with OpenSSL and zlib.
 
 # Client Libraries
-We maintain a set of officially support client libraries which make integrating and using the Simplito APIs significantly easier.
+We maintain a set of officially support client libraries which make integrating and using the Zeepay APIs significantly easier.
 Code examples for any of these client libraries can be seen by selecting your language of choice from the top right of the window.
 
 ## Authentication
@@ -34,15 +34,15 @@ Error Code | Meaning
 ---------- | -------
 400 | Bad Request -- Your request is invalid.
 401 | Unauthorized -- Your API key is wrong.
-403 | Forbidden -- The simplito requested is hidden for administrators only.
-404 | Not Found -- The specified simplito could not be found.
-405 | Method Not Allowed -- You tried to access a simplito with an invalid method.
+403 | Forbidden -- The Zeepay requested is hidden for administrators only.
+404 | Not Found -- The specified Zeepay could not be found.
+405 | Method Not Allowed -- You tried to access a Zeepay with an invalid method.
 406 | Not Acceptable -- You requested a format that isn't json.
-410 | Gone -- The simplito requested has been removed from our servers.
-418 | I'm a teapot.
-429 | Too Many Requests -- You're requesting too many simplito Slow down!
+410 | Gone -- The Zeepay requested has been removed from our servers.
+429 | Too Many Requests -- You're requesting too many Zeepay Slow down!
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
+
 
 ## Methods
 
