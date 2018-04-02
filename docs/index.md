@@ -17,7 +17,7 @@ Code examples for any of these client libraries can be seen by selecting your la
 ## Authentication
 All authentication is handled through OAuth2 authentication.
 
-To connect to our system kindly send an email to the team via [something@myzeepay.com](something@myzeepay.com).
+To connect to our system kindly send an email to the team via [technical@myzeepay.com](technical@myzeepay.com) and [akta@myzeepay.com](akta@myzeepay.com).
 Someone from the team will set you up.
 
 ## Errors
