@@ -221,7 +221,7 @@ Someone from the team will set you up.</p>
 <h3 id="auth">Auth</h3>
 <p>OAuth access tokens also permit client-side API requests. All request sent must contain the access_token.
 Below is a guide on how to get the access token.</p>
-<p>Endpoint: <a href="https://test.digitaltermination.com/oauth/token">test.digitaltermination.com/oauth/token</a></p>
+<p>Endpoint: <a href="./oauth/token">/oauth/token</a></p>
 <pre><code class="curl"># CURL
 curl -X POST \
   http://test.digital.test/oauth/token \
@@ -234,6 +234,15 @@ curl -X POST \
   -F client_id= your client id \
   -F username=bee@gmail.com \
   -F password=your password
+</code></pre>
+
+<p>Sample Response</p>
+<pre><code>{
+    &quot;token_type&quot;: &quot;Bearer&quot;,
+    &quot;expires_in&quot;: 31536000,
+    &quot;access_token&quot;: &quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjIzZmRkODA1ZjQ4YjA3MDAzNmFhYmU1OGYwMTI4YTlhNjNkNTRiZDU4ZDFkMTBiNTM1YTFiODZiNGZlOWIyNzZiMzFiN2Q2OWE2YWY3Zjg3In0.eyJhdWQiOiI3IiwianRpIjoiMjNmZGQ4MDVmNDhiMDcwMDM2YWFiZTU4ZjAxMjhhOWE2M2Q1NGJkNThkMWQxMGI1MzVhMWI4NmI0ZmU5YjI3NmIzMWI3ZDY5YTZhZjdmODciLCJpYXQiOjE1MjMzMTYzODIsIm5iZiI6MTUyMzMxNjM4MiwiZXhwIjoxNTU0ODUyMzgyLCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.QhYvqIfoStqOQxTyztIlpaVOTwckiP9Xb_DOz2oMbs_svEM7vDwj9TQEoaGVMzG7ZV63H0QHICxZE9-fVPdxxicxUyDiHIpVhAzkb-bedugW6ZWNvJ0ZPtBZMolWKYyB7MvSUoNNI3hH59w7E1ShpkmpiWj2hl46lPaYR__qlOotGWfvugN0VUea-pdD3ddsF7hSErIUYBHyrJkj5FSyNXh8aipCdRysKYQLKGdYOe2Ej-6ODCLT3VgA4zaSyVz2vHXYfLa3fu6ev-MTRMfRIeg5iYiDkVb-q-dvy2CNxiDY_-8N_o6EgPLMw06_tjfFCFwDzIACPPpxMLf10bdd6vteu-tsmlqo8W-HsCzFbqM8WWQac1o5-SbtxMh1N3hFP2jV9MbYdzxnvG5QYb-2tiob2LN5E4vn7KxomWlTja2W-ztr-xrPhB2dtAAThojWZ9AhcSFa9UfMMz2RbnrM3QJCR203zfpjG3J9EYEgn8KdI8UPV1FuaiqBLJqjokU0yKmt2MHE_NhNmLdTUlESrfxLYaT0KArujLqbhgHAI9Nu82N9KaGFECH2zd7rJ-yzG8K7lRr6r2LIEBUtkbqd-p_Lj_HqBnPWKti8zrzJKoVmjxlmdDLhy91xyEejDOxe9JSc5xt809lfwNIx9Lp2P84hL-hew_4UF-QJVkCwrQc&quot;,
+    &quot;refresh_token&quot;: &quot;def502003494eb738a5fe999e5d8030f6940acd75d3b0ebf86137b2be7bb1832a11f1668f04822306705a986bd5803960db5d8b38195dad028b8c8a993df242e203da58b8d45439474605115baf7ce3e82bi0d1c9e43a1d00ead0679ebfa732da31b05473a235a80d228e4c4edf1f32ecc62ef033b586ca807e44e3cee7153e18dcade0a17cf5a2f4e94f2f64a69eaf9eed666bb55f75447814e190b50771178c0bd07cf5d93da57d3f69a954f71c7342f5be1726d36e98c4c13cede42986ebce1442c0c0ae3308abecc27296afdfb977cc5a438785ace2c30b7438c9e4dff56b0a77e9687af5d5162e8fb2fb00a396135db5912c40123c87cc27f8b8b90e929e42c7730cd9a4165a22c5e0b60b28e84c00b2c830ea911b8917d3000d6498ca66bc330785ace9e7d24c60993714540a1b9a087472f12bede2dd28eda492342c6a2bff78f9f0eb8109511e3aebdf415d816cf7002f33ac6ef7596c9c868c05b114v&quot;
+}
 </code></pre>
 
 <h3 id="validate-mobile-wallet">Validate Mobile Wallet</h3>
@@ -283,7 +292,7 @@ curl -X POST \
 </table>
 <pre><code class="curl"># CURL
 curl -X POST \
-  https://test.digitaltermination.com/api/payout/validate \
+  /api/payout/validate \
   -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHBzOi8vc2hvcC5kaWdpdGFsdGVybWluYXRpb24uY29tL2FwaS9hdXRoIiwiaWF0IjoxNTA2ODgzNjI3LCJleHAiOjE1MDY4ODcyMjcsIm5iZiI6MTUwNjg4MzYyNywianRpIjoiMEpOSTdXb1N0SmRKeFVnUiJ9.gdE-MRx_pgLxTaVm7KaAuM4jTB47ptfrpxEaAcmYZkk' \
   -H 'Cache-Control: no-cache' \
   -H 'Postman-Token: 0efcac48-5df3-43fb-8ece-72f249f1a2c9' \
@@ -394,10 +403,10 @@ curl -X POST \
 <ul>
 <li>Sample Codes</li>
 </ul>
-<p>Endpoint: <a href="https://test.shop.digitaltermination.com/api/payout">test.digitaltermination.com/api/payout</a></p>
+<p>Endpoint: <a href="./api/payout">/api/payout</a></p>
 <pre><code class="curl"># CURL
 curl -X POST \
-  https://test.digitaltermination.com/api/payouts \
+  /api/payouts \
   -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHBzOi8vc2hvcC5kaWdpdGFsdGVybWluYXRpb24uY29tL2FwaS9hdXRoIiwiaWF0IjoxNTIyNDQ1NzMwLCJleHAiOjE1MjI0NDkzMzAsIm5iZiI6MTUyMjQ0NTczMCwianRpIjoiSlZ3N0VxRmVnWlFhUm90MCJ9.WHfOIqmfdvJ01kn3Hl9oIsh974XGv40SpV-lAO4XtOM' \
   -H 'Cache-Control: no-cache' \
   -H 'Postman-Token: 398e8abb-6d48-4389-a124-0a5a54818eed' \
@@ -416,6 +425,17 @@ curl -X POST \
   -F transaction_type=CR \
   -F extr_id=11111111129994 \
   -F service_type=Wallet
+</code></pre>
+
+<ul>
+<li>Sample Response</li>
+</ul>
+<pre><code>{
+  &quot;zeepay_id&quot;: 6081,
+  &quot;amount&quot;: &quot;1.00&quot;,
+  &quot;code&quot;: 200,
+  &quot;message&quot;: &quot;Transaction was successful&quot;
+}
 </code></pre>
               
             </div>
@@ -457,5 +477,5 @@ curl -X POST \
 
 <!--
 MkDocs version : 0.17.1
-Build Date UTC : 2018-04-02 16:13:21
+Build Date UTC : 2018-04-10 00:01:59
 -->
