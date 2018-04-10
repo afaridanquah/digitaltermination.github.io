@@ -299,7 +299,17 @@ curl -X POST \
   -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
   -F service_type=Wallet \
   -F mobile_number=233270369883 \
-  -F mno=Tigo
+  -F mno=TIGO
+</code></pre>
+
+<p>Sample Response</p>
+<pre><code>{
+    &quot;code&quot;: 200,
+    &quot;response&quot;: {
+        &quot;registration_status&quot;: &quot;Registered&quot;,
+        &quot;registered_name&quot;: &quot;ofori martinson quarshie&quot;
+    }
+}
 </code></pre>
 
 <h3 id="payout">Payout</h3>
@@ -365,7 +375,7 @@ curl -X POST \
 <tr>
 <td>address</td>
 <td>String</td>
-<td>Required</td>
+<td>Optional</td>
 <td>Address of Receipient</td>
 </tr>
 <tr>
@@ -378,7 +388,7 @@ curl -X POST \
 <td>mno</td>
 <td>String</td>
 <td>Optional</td>
-<td>Mobile Number Operator (MTN,TIGO,AIRTEL,VODAFONE,ZEEPAY)</td>
+<td>Mobile Number Operator (MTN, TIGO, AIRTEL, VODAFONE, ZEEPAY)</td>
 </tr>
 <tr>
 <td>transaction_type</td>
@@ -427,9 +437,9 @@ curl -X POST \
 
 <p>Sample Response</p>
 <pre><code>{
+  &quot;code&quot;: 200,
   &quot;zeepay_id&quot;: 6081,
   &quot;amount&quot;: &quot;1.00&quot;,
-  &quot;code&quot;: 200,
   &quot;message&quot;: &quot;Transaction was successful&quot;
 }
 </code></pre>
@@ -473,5 +483,5 @@ curl -X POST \
 
 <!--
 MkDocs version : 0.17.1
-Build Date UTC : 2018-04-10 00:04:50
+Build Date UTC : 2018-04-10 04:01:01
 -->
