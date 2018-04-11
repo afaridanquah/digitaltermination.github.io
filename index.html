@@ -247,7 +247,10 @@ curl -X POST \
 
 <h3 id="validate-mobile-wallet">Validate Mobile Wallet</h3>
 <p>This method is used to verify is a mobile number is registered to accept Mobile Money.</p>
-<p>METHOD: POST</p>
+<p>METHOD: POST
+/payouts/account-verification
+Sample Request</p>
+<p>Endpoint: <a href="./payouts/account-verification">/payouts/account-verificationt</a></p>
 <table>
 <thead>
 <tr>
@@ -292,7 +295,7 @@ curl -X POST \
 </table>
 <pre><code class="curl"># CURL
 curl -X POST \
-  /api/payout/validate \
+  /api/payouts/account-verification \
   -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHBzOi8vc2hvcC5kaWdpdGFsdGVybWluYXRpb24uY29tL2FwaS9hdXRoIiwiaWF0IjoxNTA2ODgzNjI3LCJleHAiOjE1MDY4ODcyMjcsIm5iZiI6MTUwNjg4MzYyNywianRpIjoiMEpOSTdXb1N0SmRKeFVnUiJ9.gdE-MRx_pgLxTaVm7KaAuM4jTB47ptfrpxEaAcmYZkk' \
   -H 'Cache-Control: no-cache' \
   -H 'Postman-Token: 0efcac48-5df3-43fb-8ece-72f249f1a2c9' \
@@ -410,7 +413,7 @@ curl -X POST \
 </tr>
 </tbody>
 </table>
-<p>Sample Codes</p>
+<p>Sample Request</p>
 <p>Endpoint: <a href="./api/payout">/api/payout</a></p>
 <pre><code class="curl"># CURL
 curl -X POST \
@@ -483,5 +486,5 @@ curl -X POST \
 
 <!--
 MkDocs version : 0.17.1
-Build Date UTC : 2018-04-10 04:01:01
+Build Date UTC : 2018-04-11 11:40:20
 -->
