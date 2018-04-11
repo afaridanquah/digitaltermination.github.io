@@ -446,6 +446,45 @@ curl -X POST \
   &quot;message&quot;: &quot;Transaction was successful&quot;
 }
 </code></pre>
+
+<h3 id="get-status-of-transaction">Get Status of Transaction</h3>
+<p>METHOD: GET</p>
+<p>Endpoint: <a href="./api/transactions/{id}">/api/transactions/{id}</a></p>
+<p>Sample Request</p>
+<pre><code class="curl"># CURL
+
+curl -X GET \
+  https://test.digitaltermination.com/api/transactions/1523449853 \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjY1NWM1NDM5ZTBjMWU5ZGVlNTk5ZGI4NWQ1ZjQxNDY5MTQyM2JjMWZkZTQ0NTEzYzE3NjVmYmZmNjIxYzVkZTcxZDVhNGRkOTAzZDA0OTY1In0.eyJhdWQiOiI3IiwianRpIjoiNjU1YzU0MzllMGMxZTlkZWU1OTlkYjg1ZDVmNDE0NjkxNDIzYmMxZmRlNDQ1MTNjMTc2NWZiZmY2MjFjNWRlNzFkNWE0ZGQ5MDNkMDQ5NjUiLCJpYXQiOjE1MjM0ODM0MDksIm5iZiI6MTUyMzQ4MzQwOSwiZXhwIjoxNTU1MDE5NDA5LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.FxuFw1N_FQTp7H_UklgJ1quBMWsZYgiQsxvVIy6i1yVhmZkcfQjXzQXQiYH-pPRAmJoCdpOCujDnSgpUZsvm4arhMUOMxDHM4MR8u75hwbuuQ2GNgMp7zNGPuAFnymXVJsqQhDS2uNAxv5y0N_bORQ4wOW4TYPwS2FIKRv6Oh2M_m0bDYu7J7TtgOmPSCEGr4erL72ZSOsaMTFXKHCk62GBaTD6B6WBsu2xHI4Y4PDFZYLq55W7fKUz5CImSoLgKVpd0v3-WnOqWZgiTjy0HMZLko6fWK8WCP0rCTt-Wp4h01dT9D5BpB_YZ7zlCGLJ-wQOuOXeD_9CwV3ep8V9GtgVH9MfBhwLVxH2zIKQ0JrXARLGo1WqSlRPWp0mPtJoPJz6m3ya-d-ieJc_VhtrfKbin1CJdVwliwhwgQISUB2de4FxTem1-4wAlEEFYiZnpYX23ydAzukube4qFjVm6g7uLXCOBRZBLAsk-yzz1qyNSxg6REofjJn4rM3ShB5ize5nIVj7BAKcwx2VJmzuLul25UGtY3TsDIedDQh_P-FeeFRPWM_8f3KRtexcKRnsUee_KeexAYP3S2lKdn9KZowaNu81XqHDRTU2-Ch2ulbCTKKv9b2toM8jYb4wBCAQTFwe8uHVrhWDSoUQYhNCmkjSX3gYc0Nbel_kiXJMF6_B' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Postman-Token: 74ed6401-7d5c-4e69-b305-49f9cd2ac5ed'
+</code></pre>
+
+<p>Sample Response </p>
+<pre><code>{
+    &quot;data&quot;: {
+        &quot;zeepay_id&quot;: 6091,
+        &quot;extr_id&quot;: &quot;1523449853&quot;,
+        &quot;sender_first_name&quot;: &quot;Manoj&quot;,
+        &quot;sender_last_name&quot;: &quot;Sagar&quot;,
+        &quot;sender_country&quot;: &quot;GB&quot;,
+        &quot;recipient_first_name&quot;: &quot;COMFORT&quot;,
+        &quot;recipient_last_name&quot;: &quot;MANFOWAA&quot;,
+        &quot;service_type&quot;: &quot;Wallet&quot;,
+        &quot;mobile_account&quot;: &quot;256573694649&quot;,
+        &quot;fees&quot;: null,
+        &quot;status&quot;: &quot;Error&quot;,
+        &quot;amount_sent&quot;: &quot;1.00&quot;,
+        &quot;amount_payout&quot;: null,
+        &quot;created_at&quot;: {
+            &quot;date&quot;: &quot;2018-04-11 12:30:55.000000&quot;,
+            &quot;timezone_type&quot;: 3,
+            &quot;timezone&quot;: &quot;UTC&quot;
+        }
+    }
+}
+</code></pre>
               
             </div>
           </div>
@@ -486,5 +525,5 @@ curl -X POST \
 
 <!--
 MkDocs version : 0.17.1
-Build Date UTC : 2018-04-11 12:12:56
+Build Date UTC : 2018-04-11 22:38:52
 -->
