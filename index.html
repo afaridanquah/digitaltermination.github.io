@@ -409,11 +409,23 @@ curl -X POST \
 <td>service_type</td>
 <td>String</td>
 <td>Required</td>
-<td>Wallet,Pickup</td>
+<td>Wallet,Pickup,Bank</td>
+</tr>
+<tr>
+<td>routing_number</td>
+<td>integer</td>
+<td>Optional (*Required on Bank Service Type)</td>
+<td></td>
+</tr>
+<tr>
+<td>account_number</td>
+<td>integer</td>
+<td>Optional (*Required on Bank Service Type)</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<p>Sample Request</p>
+<p>Sample Request for Wallet</p>
 <p>Endpoint: <a href="./api/payout">/api/payout</a></p>
 <pre><code class="curl"># CURL
 curl -X POST \
@@ -436,6 +448,40 @@ curl -X POST \
   -F transaction_type=CR \
   -F extr_id=11111111129994 \
   -F service_type=Wallet
+</code></pre>
+
+<p>Sample Response</p>
+<pre><code>{
+  &quot;code&quot;: 200,
+  &quot;zeepay_id&quot;: 6081,
+  &quot;amount&quot;: &quot;1.00&quot;,
+  &quot;message&quot;: &quot;Transaction was successful&quot;
+}
+</code></pre>
+
+<p>Sample Request for Bank</p>
+<pre><code class="curl">
+curl -X POST \
+  http://digital-test.test/api/payouts \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjRkZjMxMDhlMWI3NWQ2ZmVjMDFiMTZkMjRjNTA2MDhlODA1YmJjYThjNDJiODFjMWQ0ZTI4NmVkOTVlNGQ3YTYxYTY1M2YwNTZmMjQ5M2I0In0.eyJhdWQiOiIzIiwianRpIjoiNGRmMzEwOGUxYjc1ZDZmZWMwMWIxNmQyNGM1MDYwOGU4MDViYmNhOGM0MmI4MWMxZDRlMjg2ZWQ5NWU0ZDdhNjFhNjUzZjA1NmYyNDkzYjQiLCJpYXQiOjE1MjQwNDc0NzMsIm5iZiI6MTUyNDA0NzQ3MywiZXhwIjoxNTU1NTgzNDczLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.QZ3bGQiudHJtaO5n4bSeGchqpgLfuAn6v61ckKgL_9yyDI-rvkLh-dyCH1xYdaFCaozRLvXwpms_wghrt_2qmOMfXw8G4yw_yd4iwZd3lm4C7zvVBzLb6Kg7c0rwCek7ayf-Bs1SA9TLFRaJZvTA59IAUxydJer_xJjckYgDW6jJ73_Q0i0hpN93td9ewpr7Q-ZOZSPL6EkeB6AdzLwlekm07UIx5twqkyxbnhWeOZIDQpg4Q8NVEthnctgZOTYiFmn4azQNVcrMt0JUH7rsfqYC7ZgZEkY4ugk7ZP1iL3pRpAKYHXOV2itpvvr7tDpQSUY8KGMgPdZ58nN7zebjTmGuHZ8zvtvohK9RknUmkyuCJAQJok6KCNg7q5tPTXPjg5ZYFhTNyhg4lkPN0htgk0f9K9MeTYwV-OcwPaY3pSiOCYDjXhoOzgdbKxCiyMZY1P5V7nMR28T9GQSi2gKgNMvYgtRSOnQ6GZ2DKrflAfCxrqtLBAUfxk1KCLuTGx6-6l3w3bUTPFhJ52jgnyOa46hp-wnLPml6xd8lz_2NqocbG9oXINAnMhyum2JvESnDvmc58b1ak9wmnbT31zLLPKQWlwibt3_R7s7I0l0Q8VtQl0DQ2OnutPWTzM_1zHcmyITGRYAboADiHdJkO1EU4NBxGSUItSizUfC1GzLnaUw' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Postman-Token: 97be6b65-6e6d-48b1-ba48-7d4f9742af62' \
+  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+  -F sender_first_name=Test \
+  -F sender_last_name=Name \
+  -F sender_country=UK \
+  -F receiver_first_name=Kofi \
+  -F receiver_country=GH \
+  -F amount=1 \
+  -F 'address=Box 2662' \
+  -F receiver_currency=GHS \
+  -F routing_number=300304 \
+  -F account_number=6031010249361 \
+  -F receiver_last_name=Stephen \
+  -F extr_id=111111111101 \
+  -F service_type=Bank
+
 </code></pre>
 
 <p>Sample Response</p>
@@ -525,5 +571,5 @@ curl -X GET \
 
 <!--
 MkDocs version : 0.17.1
-Build Date UTC : 2018-04-11 22:38:52
+Build Date UTC : 2018-04-18 21:32:47
 -->
