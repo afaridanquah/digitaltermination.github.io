@@ -75,6 +75,11 @@
     </ul>
 	    </li>
           
+            <li class="toctree-l1">
+		
+    <a class="" href="bank/">Banks</a>
+	    </li>
+          
         </ul>
       </div>
       &nbsp;
@@ -531,10 +536,201 @@ curl -X GET \
     }
 }
 </code></pre>
+
+<h3 id="list-of-banks">List of Banks</h3>
+<p>METHOD: GET</p>
+<p>Endpoint: <a href="./api/payouts/banks">/api/payouts/banks</a></p>
+<p>Sample Request </p>
+<pre><code class="curl">
+curl -X GET \
+  /api/payouts/banks \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjRkZjMxMDhlMWI3NWQ2ZmVjMDFiMTZkMjRjNTA2MDhlODA1YmJjYThjNDJiODFjMWQ0ZTI4NmVkOTVlNGQ3YTYxYTY1M2YwNTZmMjQ5M2I0In0.eyJhdWQiOiIzIiwianRpIjoiNGRmMzEwOGUxYjc1ZDZmZWMwMWIxNmQyNGM1MDYwOGU4MDViYmNhOGM0MmI4MWMxZDRlMjg2ZWQ5NWU0ZDdhNjFhNjUzZjA1NmYyNDkzYjQiLCJpYXQiOjE1MjQwNDc0NzMsIm5iZiI6MTUyNDA0NzQ3MywiZXhwIjoxNTU1NTgzNDczLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.QZ3bGQiudHJtaO5n4bSeGchqpgLfuAn6v61ckKgL_9yyDI-rvkLh-dyCH1xYdaFCaozRLvXwpms_wghrt_2qmOMfXw8G4yw_yd4iwZd3lm4C7zvVBzLb6Kg7c0rwCek7ayf-Bs1SA9TLFRaJZvTA59IAUxydJer_xJjckYgDW6jJ73_Q0i0hpN93td9ewpr7Q-ZOZSPL6EkeB6AdzLwlekm07UIx5twqkyxbnhWeOZIDQpg4Q8NVEthnctgZOTYiFmn4azQNVcrMt0JUH7rsfqYC7ZgZEkY4ugk7ZP1iL3pRpAKYHXOV2itpvvr7tDpQSUY8KGMgPdZ58nN7zebjTmGuHZ8zvtvohK9RknUmkyuCJAQJok6KCNg7q5tPTXPjg5ZYFhTNyhg4lkPN0htgk0f9K9MeTYwV-OcwPaY3pSiOCYDjXhoOzgdbKxCiyMZY1P5V7nMR28T9GQSi2gKgNMvYgtRSOnQ6GZ2DKrflAfCxrqtLBAUfxk1KCLuTGx6-6l3w3bUTPFhJ52jgnyOa46hp-wnLPml6xd8lz_2NqocbG9oXINAnMhyum2JvESnDvmc58b1ak9wmnbT31zLLPKQWlwibt3_R7s7I0l0Q8VtQl0DQ2OnutPWTzM_1zHcmyITGRYAboADiHdJkO1EU4NBxGSUItSizUfC1GzLnaUw' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Postman-Token: 32ed7fdb-ecbf-42ba-ab32-c724aea5292c'
+
+</code></pre>
+
+<p>Sample Response</p>
+<pre><code class="curl">
+{
+    &quot;code&quot;: &quot;200&quot;,
+    &quot;banks&quot;: [
+        {
+            &quot;BankCode&quot;: &quot;300329&quot;,
+            &quot;BankName&quot;: &quot;ACCESS BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300360&quot;,
+            &quot;BankName&quot;: &quot;ADOM SAVINGS AND LOANS&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300307&quot;,
+            &quot;BankName&quot;: &quot;AGRICULTURAL DEVELOPMENT BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300320&quot;,
+            &quot;BankName&quot;: &quot;BANK OF AFRICA&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300327&quot;,
+            &quot;BankName&quot;: &quot;BANK OF BARODA (GH) LTD&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300303&quot;,
+            &quot;BankName&quot;: &quot;BARCLAYS BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300324&quot;,
+            &quot;BankName&quot;: &quot;BSIC&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300313&quot;,
+            &quot;BankName&quot;: &quot;CAL BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300356&quot;,
+            &quot;BankName&quot;: &quot;CAPITAL BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300312&quot;,
+            &quot;BankName&quot;: &quot;ECOBANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300330&quot;,
+            &quot;BankName&quot;: &quot;ENERGY BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300319&quot;,
+            &quot;BankName&quot;: &quot;FBN BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300323&quot;,
+            &quot;BankName&quot;: &quot;FIDELITY BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300351&quot;,
+            &quot;BankName&quot;: &quot;FIRST ALLIED SAVINGS AND LOANS&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300316&quot;,
+            &quot;BankName&quot;: &quot;FIRST ATLANTIC BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300334&quot;,
+            &quot;BankName&quot;: &quot;FIRST NATIONAL BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300304&quot;,
+            &quot;BankName&quot;: &quot;GCB BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300348&quot;,
+            &quot;BankName&quot;: &quot;GN BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300359&quot;,
+            &quot;BankName&quot;: &quot;HERITAGE BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300310&quot;,
+            &quot;BankName&quot;: &quot;HFC BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300305&quot;,
+            &quot;BankName&quot;: &quot;NATIONAL INVESTMENT BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300349&quot;,
+            &quot;BankName&quot;: &quot;OPPORTUNITY INTERNATIONAL&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300358\t&quot;,
+            &quot;BankName&quot;: &quot;PREMIUM BANK &quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300317&quot;,
+            &quot;BankName&quot;: &quot;PRUDENTIAL BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300331&quot;,
+            &quot;BankName&quot;: &quot;ROYAL BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300318&quot;,
+            &quot;BankName&quot;: &quot;STANBIC BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300302&quot;,
+            &quot;BankName&quot;: &quot;STANDARD CHARTERED BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300321&quot;,
+            &quot;BankName&quot;: &quot;UNIBANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300325&quot;,
+            &quot;BankName&quot;: &quot;UNITED BANK FOR AFRICA&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300309&quot;,
+            &quot;BankName&quot;: &quot;UNIVERSAL MERCHANT BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300315&quot;,
+            &quot;BankName&quot;: &quot;UT BANK&quot;,
+            &quot;IsActive&quot;: false
+        },
+        {
+            &quot;BankCode&quot;: &quot;300311&quot;,
+            &quot;BankName&quot;: &quot;ZENITH BANK&quot;,
+            &quot;IsActive&quot;: false
+        }
+    ]
+}
+
+</code></pre>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bank/" class="btn btn-neutral float-right" title="Banks">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
   
 
   <hr/>
@@ -559,6 +755,8 @@ curl -X GET \
       
       
       
+        <span style="margin-left: 15px"><a href="bank/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
     </span>
 </div>
     <script>var base_url = '.';</script>
@@ -571,5 +769,5 @@ curl -X GET \
 
 <!--
 MkDocs version : 0.17.1
-Build Date UTC : 2018-04-18 21:32:47
+Build Date UTC : 2018-04-18 22:05:20
 -->
